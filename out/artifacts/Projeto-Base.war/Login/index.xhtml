@@ -17,8 +17,8 @@
     <h:form id="form">
       <h:panelGroup id="grupo">
          <h:panelGrid columns="2">
-                <h:outputLabel for="txtnome" value="#{msg.Login}"/>
-                <h:outputLabel for="txtsenha" value="Senha:"/>
+                <h:outputLabel for="txtnome" value="#{msg.nome}"/>
+                <h:outputLabel for="txtsenha" value="#{msg.['senha']}:"/>
                 <h:inputText   id="txtnome"   value="#{login.pessoa.nome}"  />
                 <h:inputSecret id="txtsenha"  value="#{login.pessoa.senha}"/>
                 <h:commandButton id="enviar" value="Entrar"  actionListener="#{login.verificaCadastro()}">
