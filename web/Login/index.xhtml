@@ -13,21 +13,23 @@
     <meta http-equiv="refresh" content="60"/>
 </h:head>
 <h:body>
-   <h:outputText value="Página Login"/>
-    <h:form id="form">
-      <h:panelGroup id="grupo">
-         <h:panelGrid columns="2">
-                <h:outputLabel for="txtnome" value="#{msg.nome}"/>
-                <h:outputLabel for="txtsenha" value="#{msg.senha}:"/>
-                <h:inputText   id="txtnome"   value="#{login.pessoa.nome}"  />
-                <h:inputSecret id="txtsenha"  value="#{login.pessoa.senha}"/>
-                <h:commandButton id="enviar" value="Entrar"  actionListener="#{login.verificaCadastro()}">
-                   <f:ajax execute="grupo" render="grupo"/>
-                </h:commandButton>
-                <h:message for="enviar" id="msg"/>
-             <h:outputText value="Senha Invalida!" rendered="#{login.controle}"/>
-         </h:panelGrid>
-      </h:panelGroup>
-    </h:form>
+    <div id="principal" style="margin-left: 25%; margin-right: 25%; margin-top: 25%; height:300px; background-color: aqua">
+        <h:outputText value="Página Login" style="text-align: center; margin-left: 20%;"/>
+        <h:form id="form">
+            <h:panelGroup id="grupo">
+                <h:panelGrid columns="1">
+                    <h:outputLabel id="lbNome" for="txtnome" value="#{msg.nome}"/>
+                    <h:inputText   id="txtnome"   value="#{login.pessoa.nome}"  />
+                    <h:outputLabel id="lbSenha"  for="txtsenha" value="#{msg.senha}:"/>
+                    <h:inputSecret id="txtsenha"  value="#{login.pessoa.senha}"/>
+                    <h:commandButton id="enviar" value="Entrar"  actionListener="#{login.verificaCadastro()}">
+                        <f:ajax execute="grupo" render="grupo"/>
+                    </h:commandButton>
+                    <h:message for="enviar" id="msg"/>
+                    <h:outputText value="Senha Invalida!" rendered="#{login.controle}"/>
+                </h:panelGrid>
+            </h:panelGroup>
+        </h:form>
+    </div>
 </h:body>
 </html>
